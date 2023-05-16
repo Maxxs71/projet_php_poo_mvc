@@ -15,8 +15,15 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+            <!--Lien vers la page d'accueil-->
             <li class="nav-item">
                 <a class="nav-link<?= (ROUTE == '/') ? ' active' : '' ?>" href="<?= PUBLIC_PATH ?>/">Accueil</a>
+            </li>
+
+            <!--TODO : Penser à masquer ce bouton si l'utilisateur est connecté-->
+            <!--Lien vers la page d'inscription-->
+            <li class="nav-item">
+                <a class="nav-link<?= (ROUTE == '/creer-un-compte/') ? ' active' : '' ?>" href="<?= PUBLIC_PATH ?>/creer-un-compte/">Inscription</a>
             </li>
 
         </ul>

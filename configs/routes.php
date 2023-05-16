@@ -19,6 +19,11 @@ switch (ROUTE){
     $mainController->home();
     break;
 
+    // Route de la page d'accueil
+    case '/creer-un-compte/';
+    $mainController->register();
+    break;
+
     // Si aucune des *URL precedentes ne match, c'est la page qui sera appele par defaut
     default:
        $mainController->page404();
