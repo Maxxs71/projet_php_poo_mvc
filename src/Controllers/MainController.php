@@ -167,10 +167,25 @@ class MainController{
 
         }
 
-     
+
 
         require VIEWS_DIR . '/login.php';
     }
+
+    /**
+     * Controleur de la page de deconnexion
+     */
+
+    public function logout(): void
+    {
+        //TODO : Rediriger sur la page de connexion si l'utilisateur n'est pas connecté
+        // Suppression de la variable "user" stockée en session(deconnexion)
+
+        unset( $_SESSION['user']);
+
+        require VIEWS_DIR . '/logout.php';
+    }
+
 
     /**
      * Controleur de la page 404
