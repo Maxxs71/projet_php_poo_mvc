@@ -67,30 +67,42 @@ class MainController{
 
 
 
-                // Créer un nouvel utilisateur
-                $newUserToInsert = new User();
-
-                // Date actuelle (pour hydrater la date d'inscription)
-                $today = new DateTime();
-                // Hydratation
-                $newUserToInsert
-                ->setEmail($_POST['email'])
-                    ->setPassword(password_hash($_POST['password'],PASSWORD_BCRYPT))
-                    ->setFirstname($_POST['firstname'])
-                    ->setLastname($_POST['lastname'])
-                    ->setRegisterDate( $today )
-
-                ;
-
-
-                // Instanciation du manager des users
+                 // Instanciation du manager des users
                 $userManager = new UserManager();
 
-                // On demande au manager de sauvegarder notre nouvel utilisateur dans la BDD
-                $userManager->save ( $newUserToInsert );
+                // Verification si l'email est deja prise
+                $checkUser = $userManager->findOneBy('email',$_POST['email']);
 
-                // Message de succès
-                $success = 'Votre compte a bien été crée ! ';
+                if(!empty($checkUser)){
+                    $errors[] = ' Cette adresse email est déja utilisée ! ';
+                }else {
+
+                    // Créer un nouvel utilisateur
+                    $newUserToInsert = new User();
+
+                    // Date actuelle (pour hydrater la date d'inscription)
+                    $today = new DateTime();
+                    // Hydratation
+                    $newUserToInsert
+                        ->setEmail($_POST['email'])
+                        ->setPassword(password_hash($_POST['password'],PASSWORD_BCRYPT))
+                        ->setFirstname($_POST['firstname'])
+                        ->setLastname($_POST['lastname'])
+                        ->setRegisterDate( $today )
+
+                    ;
+
+
+
+
+                    // On demande au manager de sauvegarder notre nouvel utilisateur dans la BDD
+                    $userManager->save ( $newUserToInsert );
+
+                    // Message de succès
+                    $success = 'Votre compte a bien été crée ! ';
+                }
+
+
             }
 
         }
