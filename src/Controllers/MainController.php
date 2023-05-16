@@ -22,6 +22,8 @@ class MainController{
         require VIEWS_DIR . '/home.php';
 
     }
+
+
     /**
      * Controleur de la page d'inscription
      */
@@ -115,6 +117,8 @@ class MainController{
         // Charge la vue "home.php" dans le dossier "views"
         require VIEWS_DIR . '/register.php';
     }
+
+
     /**
      * Controleur de la page de connexion
      */
@@ -183,6 +187,7 @@ class MainController{
         require VIEWS_DIR . '/login.php';
     }
 
+
     /**
      * Controleur de la page de deconnexion
      */
@@ -201,6 +206,25 @@ class MainController{
         unset( $_SESSION['user']);
 
         require VIEWS_DIR . '/logout.php';
+    }
+
+    /**
+     * Controlleur de la page profil
+     */
+
+    public function profil(): void
+    {
+
+        // Redirige l'utilisateur sur la page de connexion
+        if(!isConnected()){
+
+            header('Location:' . PUBLIC_PATH .  '/connexion/');
+            die();
+        }
+
+        // Charge la vue "profil.php"
+        require VIEWS_DIR . '/profil.php';
+
     }
 
 

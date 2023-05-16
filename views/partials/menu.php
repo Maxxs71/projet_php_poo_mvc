@@ -22,12 +22,18 @@
 
             <?php
 
+            // Si l'utilisateur est connecte
             if (isConnected()){
 
                 ?>
-                <!--Lien vers la page de deconnexion-->
+
                 <li class="nav-item">
-                <a class="nav-link<?= (ROUTE == '/deconnexion/') ? ' active' : '' ?>" href="<?= PUBLIC_PATH ?>/deconnexion/">Deconnexion</a>
+                    <a class="nav-link<?= (ROUTE == '/mon-profil/') ? ' active' : '' ?>" href="<?= PUBLIC_PATH ?>/profil/">Mon Profil</a>
+                </li>
+
+                <!--Lien vers la page de deconnexion-->
+            <li class="nav-item">
+            <a class="nav-link<?= (ROUTE == '/deconnexion/') ? ' active' : '' ?>" href="<?= PUBLIC_PATH ?>/deconnexion/">Deconnexion</a>
             </li>
 
             <?php
@@ -51,6 +57,7 @@
 
             ?>
 
+    <!-- Lien vers la page "mon profil" -->
 
 
 

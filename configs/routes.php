@@ -36,6 +36,14 @@ switch (ROUTE){
     case '/deconnexion/';
         $mainController->logout();
         break;
+
+    /**
+     * Route de la page de profil
+     */
+    case '/mon-profil/';
+        $mainController->profil();
+    break;
+
     // Si aucune des *URL precedentes ne match, c'est la page qui sera appele par defaut
     default:
        $mainController->page404();
