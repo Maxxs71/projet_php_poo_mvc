@@ -66,3 +66,4 @@
 <?php include VIEWS_DIR . '/partials/footer.php'; ?>
 </body>
 </html>
+
