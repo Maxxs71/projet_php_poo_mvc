@@ -52,6 +52,14 @@ switch (ROUTE){
         $mainController->fruitAdd();
         break;
 
+    /**
+     * Route de la page qui ajoute les fruits
+     */
+    case '/fruits/liste/';
+        $mainController->fruitList();
+        break;
+
+
 
     // Si aucune des *URL precedentes ne match, c'est la page qui sera appele par defaut
     default:

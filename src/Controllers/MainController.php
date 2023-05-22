@@ -312,6 +312,27 @@ class MainController{
 
 
     /**
+     * Controleur de la page qui liste les fruits
+     */
+    public function fruitList():void
+    {
+
+        // Recuperation du manager des fruits
+        $fruitsManager = new FruitManager();
+
+
+        // Recuperation de tous les fruits dans la BDD
+        $fruits = $fruitsManager->findAll();
+
+
+
+
+        // Charge la vue "fruitList.php" dans le dossier "views"
+        require VIEWS_DIR . '/fruitList.php';
+    }
+
+
+    /**
      * Controleur de la page 404
      */
     public function page404(): void
