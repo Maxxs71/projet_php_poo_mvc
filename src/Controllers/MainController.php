@@ -337,6 +337,12 @@ class MainController{
     public function fruitDetails(): void
     {
 
+        // Verification que l'id dans l'url existe
+        if(!isset($_GET['id'])){
+            $this->page404();
+            die();
+        }
+
         // Recuperation du manager des fruits
         $fruitManager = new FruitManager();
 
@@ -351,6 +357,18 @@ class MainController{
         // Charge la vue "fruitDetails.php" dans le dossier "views"
         require VIEWS_DIR . '/fruitDetails.php';
     }
+
+    /**
+     * Controleur de la page de suppression des fruits
+     */
+    public function fruitDelete(): void
+    {
+
+
+        // Charge la vue "fruitDetails.php" dans le dossier "views"
+        require VIEWS_DIR . '/fruitDelete.php';
+    }
+
 
 
     /**
