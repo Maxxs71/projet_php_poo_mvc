@@ -59,6 +59,12 @@ switch (ROUTE){
         $mainController->fruitList();
         break;
 
+    /**
+     * Route de la page des details des fruits
+     */
+    case '/fruits/fiche/';
+        $mainController->fruitDetails();
+        break;
 
 
     // Si aucune des *URL precedentes ne match, c'est la page qui sera appele par defaut
