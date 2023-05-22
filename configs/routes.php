@@ -66,12 +66,23 @@ switch (ROUTE){
         $mainController->fruitDetails();
         break;
 
+
     /**
-     * Route de la page des details des fruits
+     * Route de la page de supprimer des fruits
      */
     case '/fruits/supprimer/';
         $mainController->fruitDelete();
         break;
+
+    /**
+     * Route de la page de modification des fruits
+     */
+    case '/fruits/modifier/';
+        $mainController->fruitEdit();
+        break;
+
+
+
 
 
 
